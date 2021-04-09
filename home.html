@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+<link rel="stylesheet" href="main.css">
+
+<script type="text/javascript">
+var app = angular.module('formApp', []);
+app.controller('formCtrl', function ($scope, $window) {
+$scope.ShowAlert = function () {
+if($scope.name.length != 0 && $scope.num.length != 0 && $scope.email.length != 0)
+$window.alert("Value Inserted!!!");
+window.location = "registration.html";
+};
+});
+</script>
+
+</head>
+<body ng-app="formApp" ng-controller="formCtrl">
+	<form name="personForm">
+	<br> <br>
+		<a href="home.html">Home</a>|
+		<a href="registration.html">Registration</a>
+		<br> <br> <br> <br>
+		
+		<h1>Student Details</h1>
+		<br> <br> <br>
+		
+            <div class="form-group">
+                <label class="text" for=""><b>Name</b></label>
+                <input type="text" name="name" class="form-control" ng-model="name" placeholder="Enter your name" required>		
+				<span ng-show="personForm.name.$touched && personForm.name.$pristine"> Required! </span> <br /><br />
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Roll No.</label>
+                <input type="text" name="num" class="form-control" ng-model="num" placeholder="Enter roll no" required>
+				<span ng-show="personForm.num.$touched && personForm.num.$pristine"> Required! </span> <br /><br />
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Email</label>
+                <input type="text" name="email" class="form-control" ng-model="email" placeholder="abc123@mail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+				<span ng-show="personForm.email.$touched && personForm.email.$error.email"> Please enter valid email! </span> <br /><br />
+            </div>
+			<br> <br> 
+            <input class="btn" type="submit" value="Submit" ng-click="ShowAlert()">
+			<br> <br><br> <br><br> <br> <br> <br><br> <br><br> <br><br> <br>
+	</form>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+<link rel="stylesheet" href="main.css">
+
+<script type="text/javascript">
+var app = angular.module('formApp', []);
+app.controller('formCtrl', function ($scope, $window) {
+$scope.ShowAlert = function () {
+if($scope.s1.length != 0 && $scope.s2.length != 0 && $scope.s3.length != 0 && $scope.s4.length != 0 && $scope.act.length != 0)
+$window.alert("Value Inserted!!!");
+window.location = "last.html";
+};
+});
+</script>
+
+</head>
+<body ng-app="formApp" ng-controller="formCtrl">
+	<form name="personForm"">
+	<br> 
+		<a href="home.html">Home</a>
+		<a href="registration.html">Registration</a>
+		<br> <br>
+		
+		<h1>Academic Details</h1>
+		<br> <br> <br>
+		
+            <div class="form-group">
+                <label class="text" for=""><b>MCA Marks</b></label><br><br>
+                <label class="text" for=""><b>Semester 1</b></label>
+                <input type="number" name="s1" class="form-control" ng-model="s1" required>
+				<span ng-show="personForm.s1.$touched && personForm.s1.$pristine"> Required! </span> 
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Semester 2</label>
+                <input type="number" name="s2" class="form-control" ng-model="s2" required>
+				<span ng-show="personForm.s2.$touched && personForm.s2.$pristine"> Required! </span> 
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Semester 3</label>
+                <input type="number" name="s3" class="form-control" ng-model="s3" required>
+				<span ng-show="personForm.s3.$touched && personForm.s3.$pristine"> Required! </span> 
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Semester 4</label>
+                <input type="number" name="s4" class="form-control" ng-model="s4" required>
+				<span ng-show="personForm.s4.$touched && personForm.s4.$pristine"> Required! </span> 
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Aggregate : {{ (s1+s2+s3+s4)/4 }}</label>
+            </div><br>
+            <div class="form-group">
+                <label class="text" for="">Programing languages known:</label><br><br>
+                <input class="" type="checkbox" name="" class="form-control" id="" ><span class="checkmark">C</span>
+                
+                <input class="" type="checkbox" name="" class="form-control" id=""><span class="checkmark">CPP</span>
+                
+                <input class="" type="checkbox" name="" class="form-control" id="" ><span class="checkmark">JAVA</span>
+                
+                <input class="" type="checkbox" name="" class="form-control" id="" ><span class="checkmark">Python</span>
+                
+                <input class="" type="checkbox" name="" class="form-control" id="" ><span class="checkmark">C#</span>
+                
+                <input class="" type="checkbox" name="" class="form-control" id="" ><span class="checkmark">R</span>
+                
+            </div><br>
+            <div class="form-group">
+                <label class="text" for="">Extra Cirricular Activities</label>
+                <input type="text" name="act" class="form-control" ng-model="act" required>
+				<span ng-show="personForm.act.$touched && personForm.act.$pristine"> Required! </span> 
+            </div>
+			
+			<br> <br> 
+            <input class="btn" type="submit" value="Submit" ng-click="ShowAlert()">
+			<br> <br><br> <br><br> <br> <br> <br><br> <br><br> <br><br> <br>
+	</form>
+</body>
+</html>

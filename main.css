@@ -1,0 +1,124 @@
+*{
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background: rgb(80, 50, 19);
+    display: flex;            
+}
+a{
+    color: bisque;
+    margin: 10%;
+    font-size: 20px;
+    font-weight:bold;
+    text-shadow:0 8px 16px black;
+}
+.checkmark{
+    color: rgb(248, 246, 244);
+    margin: .9%;
+    font-size: 20px;
+    font-weight:bold;
+}
+.container{
+    margin: auto;
+    width: 500px;
+    max-width: 90%;
+}
+form{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    font-size: 16px;
+    background: orange;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px black;
+
+}
+.container2{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    font-size: 16px;
+    
+    background: orange;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px black;
+
+}
+.container3{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    margin-top: 3%;
+    font-size: 16px;
+    background: rgb(37, 47, 92);
+    border-radius: 4px;
+    box-shadow: 0 8px 16px black;
+
+}
+h1{
+    text-align: center;
+    margin-bottom: 24px;
+    color: black;
+}
+form .form-control{
+    width: 100%;
+    height: 40px;
+    background: rgb(253, 253, 253);
+    border-radius: 4px;
+    border :1px solid silver;
+    margin: 10px 0 18px 0;
+    padding: 0 10px; 
+    /* box-shadow: 0 8px 16px black; */
+}
+form .btn{
+    margin-left: 50%;
+    transform: translate(-50%);
+    width: 120px;
+    height: 34px;
+    border: none;
+    outline: none;
+    background: rgb(49, 45, 58);
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: whitesmoke;
+    border-radius: 4px;
+    transition: .3s;
+}
+.container .btn{
+    margin-left: 100%;
+    transform: translate(-50%);
+    padding: 1%;
+    width: 120px;
+    height: 34px;
+    border: none;
+    outline: none;
+    background: rgb(104, 101, 110);
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: whitesmoke;
+    border-radius: 4px;
+    transition: .3s;
+}
+.container form .btn:hover {
+    opacity: .7;
+}
+.btn:hover {
+    opacity: .7;
+}
+.text{
+    font-size: 20px;
+    font-weight:bold;
+    color: azure;
+}
+.ng-hide {
+height: 0;
+width: 0;
+background-color: transparent;
+top:-200px;
+left: 200px;
+}
