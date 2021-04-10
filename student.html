@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+	<script type="text/javascript">
+var app = angular.module('myApp', []);
+app.controller('Form1Controller', function ($scope, $window) {
+$scope.ShowAlert1 = function () {
+if($scope.name.length != 0 && $scope.num.length != 0 && $scope.email.length != 0)
+$window.alert("Value Inserted!!!");
+window.location = "#/form2";
+};
+});
+</script>
+    <title>STUDENT DETAILS</title>
+</head>
+<body ng-app="myApp">
+    <script type="text/ng-template" id="pages/form1.html">
+        <form name="personForm">
+            <br> <br> <br> <br>
+		
+		<h1>Student Details</h1>
+		<br> <br> <br>
+		
+            <div class="form-group">
+                <label class="text" for=""><b>Name</b></label>
+                <input type="text" name="name" class="form-control" ng-model="name" placeholder="Enter your name" required>		
+				<span ng-show="personForm.name.$touched && personForm.name.$pristine"> Required! </span> <br /><br />
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Roll No.</label>
+                <input type="text" name="num" class="form-control" ng-model="num" placeholder="Enter roll no" required>
+				<span ng-show="personForm.num.$touched && personForm.num.$pristine"> Required! </span> <br /><br />
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Email</label>
+                <input type="text" name="email" class="form-control" ng-model="email" placeholder="abc123@mail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+				<span ng-show="personForm.email.$touched && personForm.email.$error.email"> Please enter valid email! </span> <br /><br />
+            </div>
+			<br> <br> 
+            <input class="btn" type="submit" value="Submit" ng-click="ShowAlert1()">
+			<br> <br><br> <br><br> <br> <br> <br><br> <br><br> <br><br> <br>
+        </form>
+      </script>
+  
+      <script type="text/ng-template" id="pages/form2.html">
+        <form name="personForm" >
+            <h1>Academic Details</h1>
+		<br> <br> <br>
+		
+            <div class="form-group">
+                <label class="text" for=""><b>MCA Marks</b></label><br><br>
+                <label class="text" for=""><b>Semester 1</b></label>
+                <input type="number" name="s1" class="form-control" ng-model="s1" required>
+				<span ng-show="personForm.s1.$touched && personForm.s1.$pristine"> Required! </span> 
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Semester 2</label>
+                <input type="number" name="s2" class="form-control" ng-model="s2" required>
+				<span ng-show="personForm.s2.$touched && personForm.s2.$pristine"> Required! </span> 
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Semester 3</label>
+                <input type="number" name="s3" class="form-control" ng-model="s3" required>
+				<span ng-show="personForm.s3.$touched && personForm.s3.$pristine"> Required! </span> 
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Semester 4</label>
+                <input type="number" name="s4" class="form-control" ng-model="s4" required>
+				<span ng-show="personForm.s4.$touched && personForm.s4.$pristine"> Required! </span> 
+            </div>
+            <div class="form-group">
+                <label class="text" for="">Aggregate : {{ (s1+s2+s3+s4)/4 }}</label>
+            </div><br>
+            <div class="form-group">
+                <label class="text" for="">Programing languages known:</label><br><br>
+                <input class="" type="checkbox" name="" class="form-control" id="" ><span class="checkmark">C</span>
+                
+                <input class="" type="checkbox" name="" class="form-control" id=""><span class="checkmark">CPP</span>
+                
+                <input class="" type="checkbox" name="" class="form-control" id="" ><span class="checkmark">JAVA</span>
+                
+                <input class="" type="checkbox" name="" class="form-control" id="" ><span class="checkmark">Python</span>
+                
+                <input class="" type="checkbox" name="" class="form-control" id="" ><span class="checkmark">C#</span>
+                
+                <input class="" type="checkbox" name="" class="form-control" id="" ><span class="checkmark">R</span>
+                
+            </div><br>
+            <div class="form-group">
+                <label class="text" for="">Extra Cirricular Activities</label>
+                <input type="text" name="act" class="form-control" ng-model="act" required>
+				<span ng-show="personForm.act.$touched && personForm.act.$pristine"> Required! </span> 
+            </div>
+			
+			<br> <br> 
+            <input class="btn" type="submit" value="Submit" ng-click="ShowAlert2()">
+			<br> <br><br> <br><br> <br> <br> <br><br> <br><br> <br><br> <br>
+        </form>
+      </script>
+	
+      <script type="text/ng-template" id="pages/form3.html">
+		<form>
+		<br> <br> <br> <br> <br> <br>
+		<div> <font size ="7"> Registration Successful!!!</font> </div>
+		
+		<br> <br><br> <br> <br> <br><br> <br><br> <br><br> <br>
+		<center>
+		<font size ="60"> <h1>Thank You!!! </h1></font>
+		</center>
+		<br> <br> <br> <br> <br><br> <br><br> <br> <br> <br><br> <br><br> <br><br> <br>
+		</form>
+	</script>
+	
+      <div class="container2">
+        <a href="#/" class="btnn">Student Details</a>
+        <a href="#/form2">Academic Details</a>
+
+        <div class="container3" ng-view>
+        
+        </div>
+      </div>
+
+
+<script>
+var app = angular.module('myApp', ['ngRoute']);
+
+app.config(function($routeProvider) {
+  $routeProvider
+
+  .when('/', {
+    templateUrl : 'pages/form1.html',
+    controller  : 'Form1Controller'
+  })
+
+  .when('/form2', {
+    templateUrl : 'pages/form2.html',
+    controller  : 'Form2Controller'
+  })
+
+  .when('/form3', {
+    templateUrl : 'pages/form3.html',
+    controller  : 'LastController'
+  })
+  
+  .otherwise({redirectTo: '/'});
+});
+
+app.controller('Form1Controller', function($scope, $window) {
+  $scope.message = 'Hello from HomeController';
+  $scope.ShowAlert1 = function () {
+if($scope.name.length != 0 && $scope.num.length != 0 && $scope.email.length != 0)
+$window.alert("Value Inserted!!!");
+window.location = "#/form2";
+};
+ 
+});
+
+app.controller('Form2Controller', function($scope, $window) {
+    $scope.s1=0;
+    $scope.s2=0;
+    $scope.s3=0;
+    $scope.s4=0;
+	
+	$scope.ShowAlert2 = function () {
+if($scope.s1.length != 0 && $scope.s2.length != 0 && $scope.s3.length != 0 && $scope.s4.length != 0 && $scope.act.length != 0)
+$window.alert("Value Inserted!!!");
+window.location = "#/form3";
+};
+});
+
+app.controller('Form3Controller', function($scope) {
+  $scope.message = 'Hello from HomeController';
+ 
+});
+
+</script>        
+</body>
+</html>
